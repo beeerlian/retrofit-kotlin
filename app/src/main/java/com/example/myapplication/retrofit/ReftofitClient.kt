@@ -1,5 +1,6 @@
 package com.example.myapplication.retrofit
 
+import com.example.myapplication.interceptors.AuthenticatedInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,6 +13,7 @@ object RetrofitClient {
 
         var mOkHttpClient = OkHttpClient
             .Builder()
+//            .addInterceptor(AuthenticatedInterceptor())
             .addInterceptor(mHttpLoggingInterceptor)
             .build()
 
